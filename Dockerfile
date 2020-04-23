@@ -15,7 +15,7 @@ RUN apt-get update \
 
 RUN git clone https://github.com/zubrick/tv_grab_fr_telerama.git \
     && cp tv_grab_fr_telerama/tv_grab_fr_telerama /usr/local/bin/tv_grab_fr_telerama \
-    && echo "$CRON app /usr/local/bin/tv_grab_fr_telerama --output /app/all.xml >/dev/stdout 2>&1" | tee -a /etc/cron.d/tv_grab
+    && echo "$CRON app /usr/local/bin/tv_grab_fr_telerama --output /app/all.xml" | tee -a /etc/cron.d/tv_grab
 
 COPY entrypoint.sh /entrypoint.sh
 COPY start.sh /start.sh
